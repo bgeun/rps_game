@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>RPS GAME</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="rps_board">
+        <div class="header">
+          <div class="score">
+            <p class="score_my">0</p>
+            <p class="string">:</p>
+            <p class="score_com">0</p>
+          </div>
+          <button class="reset_btn">reset</button>
+        </div>
+        <div class="game">
+          <div class="game_me game_player">
+            <h2 class="gamer">You</h2>
+          </div>
+          <div class="game_com game_player">
+            <h2 class="gamer">Computer</h2>
+          </div>
+        </div>
+        <div class="btn">
+          <div class="r_btn rps">
+            <img src="./img/rock.jpg" alt="주먹" />
+          </div>
+          <div class="s_btn rps">
+            <img src="./img/scissors.jpg" alt="가위" />
+          </div>
+          <div class="p_btn rps">
+            <img src="./img/p.jpg" alt="보" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

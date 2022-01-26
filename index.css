@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 전체 */
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.rps_board {
+  background-color: #ffffff;
+  width: 400px;
+  height: 500px;
+  padding: 30px 20px;
+  border: 2px solid black;
+  border-radius: 16px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* 점수판 reset */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  border-bottom: 1px dotted #333333;
+}
+
+.score {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.reset_btn {
+  font-size: 14px;
+  padding: 10px 40px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.reset_btn:hover {
+  color: #ffffff;
+  background-color: rgb(125, 64, 64);
+  transition: all 0.2s ease;
+}
+
+/* 게임 화면 */
+.game {
+  display: flex;
+  justify-content: space-between;
+  height: 280px;
+  border-bottom: 1px dotted #333333;
+  margin-bottom: 10px;
+}
+
+.game_player {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 버튼 */
+.btn {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rps > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+.rps > img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}

@@ -40,20 +40,21 @@ const getScore = () => {
   const com_img = document.querySelector(".game_com > img");
   let user = parseInt(user_img.name);
   let com = parseInt(com_img.name);
-
-  if (
-    (user == 0 && com == 1) ||
-    (user == 1 && com == 2) ||
-    (user == 2 && com == 0)
-  ) {
-    user_score.innerText = parseInt(user_score.innerText) + 1;
-  }
-  if (
-    (user == 1 && com == 0) ||
-    (user == 2 && com == 1) ||
-    (user == 0 && com == 2)
-  ) {
-    com_score.innerText = parseInt(com_score.innerText) + 1;
+  if (game_me.children.length == 2 && game_com.children.length == 2) {
+    if (
+      (user == 0 && com == 1) ||
+      (user == 1 && com == 2) ||
+      (user == 2 && com == 0)
+    ) {
+      user_score.innerText = parseInt(user_score.innerText) + 1;
+    }
+    if (
+      (user == 1 && com == 0) ||
+      (user == 2 && com == 1) ||
+      (user == 0 && com == 2)
+    ) {
+      com_score.innerText = parseInt(com_score.innerText) + 1;
+    }
   }
 };
 
@@ -70,7 +71,5 @@ resetBtn.addEventListener("click", () => {
 // 실행
 setInterval(() => {
   com();
-  if (game_me.children.length == 2 && game_com.children.length == 2) {
-    getScore();
-  }
+  getScore();
 }, 700);

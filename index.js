@@ -12,10 +12,11 @@ const com_score = document.querySelector(".score_com");
 // 사용자 가위바위보
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", (e) => {
-    const img = document.createElement("img");
     if (game_me.children.length == 2) {
       game_me.removeChild(game_me.children[1]);
     }
+
+    const img = document.createElement("img");
     img.setAttribute("src", e.target.getAttribute("src"));
     img.setAttribute("name", i);
     game_me.appendChild(img);
@@ -25,10 +26,11 @@ for (let i = 0; i < btns.length; i++) {
 // 컴퓨터 가위바위보
 const com = () => {
   let random = Math.floor(Math.random() * 3);
-  const img_com = document.createElement("img");
   if (game_com.children.length == 2) {
     game_com.removeChild(game_com.children[1]);
   }
+
+  const img_com = document.createElement("img");
   img_com.setAttribute("src", btns[random].getAttribute("src"));
   img_com.setAttribute("name", random);
   game_com.appendChild(img_com);
@@ -68,8 +70,57 @@ resetBtn.addEventListener("click", () => {
   }
 });
 
+// 컴퓨터 화면 지우기
+const com_remove = () => {
+  if (game_com.children.length == 2) {
+    game_com.removeChild(game_com.children[1]);
+  }
+};
+
+// 시간지연 함수
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+// 카운트 3표시
+const countThree = () => {
+  let three = document.createElement("h2");
+  three.innerText = 3;
+  game_com.appendChild(three);
+};
+
+// 카운트 2표시
+const countTwo = () => {
+  let two = document.createElement("h2");
+  two.innerText = 2;
+  game_com.appendChild(two);
+};
+
+// 카운트 1표시
+const countOne = () => {
+  let one = document.createElement("h2");
+  one.innerText = 1;
+  game_com.appendChild(one);
+};
+
 // 실행
-setInterval(() => {
+execute();
+
+async function execute() {
+  com_remove();
+  countThree();
+  await sleep(1000);
+  com_remove();
+  countTwo();
+  await sleep(1000);
+  com_remove();
+  countOne();
+  await sleep(1000);
   com();
   getScore();
-}, 700);
+  await sleep(1500);
+  com_remove();
+}
+setInterval(() => {
+  execute();
+}, 5500);

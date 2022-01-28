@@ -72,7 +72,7 @@ resetBtn.addEventListener("click", () => {
 
 // 컴퓨터 화면 지우기
 const com_remove = () => {
-  if (game_com.children.length == 2) {
+  if (game_com.children.length >= 2) {
     game_com.removeChild(game_com.children[1]);
   }
 };
@@ -103,6 +103,9 @@ const countOne = () => {
   game_com.appendChild(one);
 };
 
+// 카운트 표시
+const countDown_arr = [3, 2, 1];
+
 // 실행
 execute();
 
@@ -121,6 +124,7 @@ async function execute() {
   await sleep(1500);
   com_remove();
 }
+
 setInterval(() => {
   execute();
 }, 5500);
